@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/Java JDK VM 1.8.0_v112 Windows">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/antlr.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/antlr-2.7.2.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/common-annotations.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/commons-chain-1.2.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/commons-collections.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/commons-digester.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/commons-digester-1.8.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/commons-fileupload.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/commons-lang.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/commons-logging.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/commons-validator.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/commons-validator-1.3.1.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/dom4j-full.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/hibernate3.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/jakarta-oro.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/javaee.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/javassist.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/jstl.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/jta.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/jul-to-slf4j-1.7.5.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/log4j-over-slf4j-1.7.5-sources.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/ojdbc6-11.2.0.1.0.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/org.apache.commons.collections.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/poi-3.5-beta5-20090219.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/servlet-api.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/slf4j-api-1.7.5.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/slf4j-ext-1.7.5.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/slf4j-simple-1.7.5.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/standard.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/struts.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/struts-core-1.3.10.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/struts-legacy.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/struts-taglib-1.3.10.jar"/>
+	<classpathentry kind="lib" path="F:/School Project Related Files/project_dumps/project_jars/struts-tiles-1.3.10.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
