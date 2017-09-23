@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Oct, 2013 5:01:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pkg.hibernate.Exam" table="exam" catalog="maa">
+        <id name="examCode" type="string">
+            <column name="Exam_Code" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="exam" type="string">
+            <column name="Exam" length="30" />
+        </property>
+        <set name="multipleQuestionAnswers" table="multiple_question_answer" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EXAM_CODE" length="10" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.MultipleQuestionAnswer" />
+        </set>
+        <set name="examSchedules" table="exam_schedule" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Exam_Code" length="10" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.ExamSchedule" />
+        </set>
+    </class>
+</hibernate-mapping>

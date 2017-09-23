@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Oct, 2013 5:01:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pkg.hibernate.Category" table="category" catalog="maa">
+        <id name="categoryType" type="string">
+            <column name="Category_Type" length="25" />
+            <generator class="assigned" />
+        </id>
+        <property name="category" type="string">
+            <column name="Category" length="25" />
+        </property>
+        <set name="markses" table="marks" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Category_Type" length="25" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.Marks" />
+        </set>
+        <set name="persons" table="person" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Person_Type" length="25" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.Person" />
+        </set>
+        <set name="dailyWorks" table="daily_work" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="person_type" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.DailyWork" />
+        </set>
+        <set name="personDependentDetails" table="person_dependent_detail" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Cat_id" length="25" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.PersonDependentDetail" />
+        </set>
+    </class>
+</hibernate-mapping>

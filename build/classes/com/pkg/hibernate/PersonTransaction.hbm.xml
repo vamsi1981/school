@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Oct, 2013 5:01:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pkg.hibernate.PersonTransaction" table="person_transaction" catalog="maa">
+        <composite-id name="id" class="com.pkg.hibernate.PersonTransactionId">
+            <key-property name="transId" type="int">
+                <column name="TRANS_ID" />
+            </key-property>
+            <key-property name="catId" type="string">
+                <column name="CAT_ID" length="15" />
+            </key-property>
+            <key-property name="personId" type="string">
+                <column name="Person_Id" length="25" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="person" class="com.pkg.hibernate.Person" update="false" insert="false" fetch="select">
+            <column name="CAT_ID" length="15" not-null="true" />
+            <column name="Person_Id" length="25" not-null="true" />
+        </many-to-one>
+        <property name="activeClass" type="string">
+            <column name="Active_Class" length="20" />
+        </property>
+        <property name="status" type="string">
+            <column name="Status" length="20" />
+        </property>
+        <property name="boObject" type="string">
+            <column name="BO_Object" length="35" />
+        </property>
+        <property name="creationDt" type="timestamp">
+            <column name="Creation_Dt" length="0" />
+        </property>
+        <property name="latestUpdateDt" type="timestamp">
+            <column name="Latest_Update_Dt" length="0" />
+        </property>
+    </class>
+</hibernate-mapping>

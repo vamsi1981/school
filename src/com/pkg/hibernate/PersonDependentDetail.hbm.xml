@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Oct, 2013 5:01:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pkg.hibernate.PersonDependentDetail" table="person_dependent_detail" catalog="maa">
+        <composite-id name="id" class="com.pkg.hibernate.PersonDependentDetailId">
+            <key-property name="catId" type="string">
+                <column name="Cat_id" length="25" />
+            </key-property>
+            <key-property name="uniqueId" type="string">
+                <column name="Unique_Id" length="15" />
+            </key-property>
+            <key-property name="guardianType" type="string">
+                <column name="Guardian_Type" length="20" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="category" class="com.pkg.hibernate.Category" update="false" insert="false" fetch="select" >
+            <column name="Cat_id" length="25" not-null="true" />
+        </many-to-one>
+        <many-to-one name="address" class="com.pkg.hibernate.Address" fetch="select" lazy="false">
+            <column name="Add_Code" length="15" not-null="true" />
+        </many-to-one>
+        <many-to-one name="person" class="com.pkg.hibernate.Person" update="false" insert="false" fetch="select">
+            <column name="Unique_Id" length="15" not-null="true" />
+            <column name="Cat_id" length="25" not-null="true" />
+        </many-to-one>
+        <many-to-one name="guardian" class="com.pkg.hibernate.Guardian" update="false" insert="false" fetch="select">
+            <column name="Guardian_Type" length="20" not-null="true" />
+        </many-to-one>
+        <property name="guardianName" type="string">
+            <column name="Guardian_Name" length="20" />
+        </property>
+        <property name="qualificationCode" type="string">
+            <column name="Qualification_Code" length="10" />
+        </property>
+        <property name="caste" type="string">
+            <column name="Caste" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

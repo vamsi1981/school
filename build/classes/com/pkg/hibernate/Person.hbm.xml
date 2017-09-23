@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Oct, 2013 5:01:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pkg.hibernate.Person" table="person" catalog="maa">
+        <composite-id name="id" class="com.pkg.hibernate.PersonId">
+            <key-property name="id" type="string">
+                <column name="ID" length="15" />
+            </key-property>
+            <key-property name="personType" type="string">
+                <column name="Person_Type" length="25" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="category" class="com.pkg.hibernate.Category" update="false" insert="false" fetch="select">
+            <column name="Person_Type" length="25" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="NAME" length="20" />
+        </property>
+        <property name="sex" type="string">
+            <column name="SEX" length="5" />
+        </property>
+        <property name="dob" type="date">
+            <column name="DOB" length="0" />
+        </property>
+        <property name="joinigDate" type="date">
+            <column name="JOINIG_DATE" length="0" />
+        </property>
+        <property name="releaseDate" type="date">
+            <column name="RELEASE_DATE" length="0" />
+        </property>
+        <property name="creDttm" type="timestamp">
+            <column name="cre_dttm" length="0" />
+        </property>
+        <set name="focusAreases" table="focus_areas" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="person_type" length="15" />
+                <column name="Person_ID" length="10" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.FocusAreas" />
+        </set>
+        <set name="markses" table="marks" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Person_ID" length="15" not-null="true" />
+                <column name="Category_Type" length="25" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.Marks" />
+        </set>
+        <set name="personTransactions" table="person_transaction" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CAT_ID" length="15" not-null="true" />
+                <column name="Person_Id" length="25" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.PersonTransaction" />
+        </set>
+        <set name="personDependentDetails" table="person_dependent_detail" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Unique_Id" length="15" not-null="true" />
+                <column name="Cat_id" length="25" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.PersonDependentDetail" />
+        </set>
+        <set name="dailyWorks" table="daily_work" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Person_ID" length="15" not-null="true" />
+                <column name="person_type" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.DailyWork" />
+        </set>
+        <set name="personGroups" table="person_group" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Person_Type" length="15" not-null="true" />
+                <column name="Person_Id" length="25" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.PersonGroup" />
+        </set>
+    </class>
+</hibernate-mapping>

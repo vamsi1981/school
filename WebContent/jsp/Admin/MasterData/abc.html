@@ -1,0 +1,30 @@
+<html>
+<head>
+<script>
+
+//Modeless window script- By DynamicDrive.com
+//for full source code and terms of use
+//visit http://www.dynamicdrive.com
+
+function modelesswin(url,mwidth,mheight){
+if (document.all&&window.print) //if ie5
+eval('window.showModelessDialog(url,"","help:0;resizable:1;dialogWidth:'+mwidth+'px;dialogHeight:'+mheight+'px")')
+else
+eval('window.open(url,"","width='+mwidth+'px,height='+mheight+'px,resizable=1,scrollbars=1")')
+}
+
+//configure URL and window dimensions (width/height)
+function test()
+{
+//modelesswin("http://yahoo.com",600,600);
+window.open("c:/temp1/abc.html");
+}
+
+//To load via link, use something like below:
+//
+</script>
+</head>
+<body>
+<a href="javascript:modelesswin('http://yahoo.com',600,400)">Click here</a>
+<input type="button" onclick="test()">
+</body>

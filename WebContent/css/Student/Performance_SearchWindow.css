@@ -1,0 +1,41 @@
+#peformance_sw
+{
+	margin:0px;
+	padding:0px;	
+}
+#peformance_sw ul
+{
+	margin:0px;
+	padding:0px;
+	display:block;
+	position:absolute;
+	
+}
+#peformance_sw ul li
+{
+	margin:0px;
+	padding:0px;
+	display:block;
+	position:absolute;
+	height:10px;
+	width:158.5px;
+	top:-7.9px;
+	left:-5px;
+		
+}
+#peformance_sw ul li a
+{
+	margin:0px;
+	padding:2px;
+	display:block;
+	position:relative;
+	text-decoration:none;
+	background-color:olive;
+	color:white;
+	margin-top:0px;
+	text-indent:0px;
+	text-align: center;
+	height:30px;
+	border: 1px solid black;
+	
+}

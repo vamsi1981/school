@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Oct, 2013 5:01:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pkg.hibernate.Guardian" table="guardian" catalog="maa">
+        <id name="guardianType" type="string">
+            <column name="Guardian_Type" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="relation" type="string">
+            <column name="Relation" length="20" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="Remarks" length="20" />
+        </property>
+        <set name="personDependentDetails" table="person_dependent_detail" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Guardian_Type" length="20" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.PersonDependentDetail" />
+        </set>
+    </class>
+</hibernate-mapping>

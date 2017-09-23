@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.pkg.hibernate.TimeTable" table="time_table" catalog="maa">
+        <id name="timeTableId" type="java.lang.String">
+            <column name="Time_Table_Id" length="20" />
+        </id>
+        <many-to-one name="teacherToSubject" class="com.pkg.hibernate.TeacherToSubject" fetch="select" lazy="false">
+            <column name="person_id" length="15" />
+            <column name="Subject_Id" length="5" />
+        </many-to-one>
+        <many-to-one name="timetableschedule" class="com.pkg.hibernate.Timetableschedule" fetch="select" lazy="false" >
+            <column name="time_table_type" length="20" />
+        </many-to-one>
+        <many-to-one name="classlevel" class="com.pkg.hibernate.Classlevel" fetch="select" lazy="false">
+            <column name="Class_Id" length="10" />
+        </many-to-one>
+        <many-to-one name="period" class="com.pkg.hibernate.Period" fetch="select" lazy="false">
+            <column name="Period_Code" length="10" />
+        </many-to-one>
+        <many-to-one name="subject" class="com.pkg.hibernate.Subject" update="false" insert="false" fetch="select" lazy="false">
+            <column name="Subject_Id" length="5" />
+        </many-to-one>
+        <property name="date" type="java.util.Date">
+            <column name="Date" length="0" />
+        </property>
+        <property name="remarks" type="java.lang.String">
+            <column name="Remarks" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

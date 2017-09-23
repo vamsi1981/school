@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Oct, 2013 5:01:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pkg.hibernate.MarksSectionWise" table="marks_section_wise" catalog="maa">
+        <composite-id name="id" class="com.pkg.hibernate.MarksSectionWiseId">
+            <key-property name="personId" type="string">
+                <column name="Person_ID" length="10" />
+            </key-property>
+            <key-property name="subjectId" type="string">
+                <column name="Subject_Id" length="10" />
+            </key-property>
+            <key-property name="marks" type="java.lang.Float">
+                <column name="Marks" precision="12" scale="0" />
+            </key-property>
+            <key-property name="sectionId" type="string">
+                <column name="section_id" length="10" />
+            </key-property>
+            <key-property name="examCode" type="string">
+                <column name="exam_code" length="10" />
+            </key-property>
+            <key-property name="remarks" type="string">
+                <column name="Remarks" length="25" />
+            </key-property>
+            <key-property name="personType" type="string">
+                <column name="Person_Type" length="10" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="subjectSection" class="com.pkg.hibernate.SubjectSection" update="false" insert="false" fetch="select">
+            <column name="section_id" length="10" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+    <form-beans>
+      <form-bean name="addstdtform" type="com.pkg.ActionForm.Add_StudentActionForm"/>
+      <form-bean name="addMasterDataform" type="com.pkg.ActionForm.SchoolMasterDataForm"/>
+      <form-bean name="lstForm" type="com.pkg.ActionForm.List_StudentForm"/>
+      <form-bean name="stdetail" type="com.pkg.ActionForm.StudentDetailDisplay"/>
+    </form-beans>
+
+  <global-forwards>
+       <forward name="success" path="/jsp/Admin/Student/result.jsp" />
+    </global-forwards>
+
+    <action-mappings>
+        <action path="/AddStudent" type="com.pkg.Action.Add_StudentAction" name="addstdtform" scope="session"
+        validate="true" input="/jsp/Admin/Student/Add_Student.jsp">
+          <forward name="success" path="/jsp/Admin/Student/Detail_Student.jsp" />
+        </action>
+        <action path="/AddTeacher" type="com.pkg.Action.Add_TeacherAction" name="addstdtform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/Teacher/Detail_Teacher.jsp" />
+        </action>
+    
+        <action path="/UpdateStudent" type="com.pkg.Action.Update_StudentAction" name="lstForm" scope="session"
+        validate="true" input="/jsp/Admin/Student/Add_Student.jsp">
+          <forward name="success" path="/jsp/Admin/Student/Update_Student.jsp" />
+          <forward name="displayUpdate" path="/jsp/Admin/Student/Display_Update_Student.jsp" />
+        </action>
+         <action path="/UpdateTeacher" type="com.pkg.Action.Update_TeacherAction" name="lstForm" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/Teacher/Update_Teacher.jsp" />
+          <forward name="displayUpdate" path="/jsp/Admin/Teacher/Display_Update_Teacher.jsp" />
+        </action>
+        
+        
+        
+        <action path="/UpdateSaveStudent" type="com.pkg.Action.Update_StudentAction" name="lstForm" scope="session"
+        validate="true" input="/jsp/Admin/Student/Add_Student.jsp">
+          <forward name="success" path="/jsp/Admin/Student/Update_Student.jsp" />
+        </action>
+         <action path="/UpdateSaveTeacher" type="com.pkg.Action.Update_TeacherAction" name="lstForm" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/Teacher/Update_Teacher.jsp" />
+        </action>
+        
+        <action path="/ListStudents" type="com.pkg.Action.ListStudentsAction" name="lstForm" scope="session"
+        validate="true" input="/jsp/Main/G_SearchWindow.jsp">
+          <forward name="success" path="/jsp/Admin/Student/StudentResult.jsp" />
+        </action>
+        <action path="/ListTeachers" type="com.pkg.Action.ListTeachersAction" name="lstForm" scope="session"
+        validate="true" input="/jsp/Main/G_SearchWindow.jsp">
+          <forward name="success" path="/jsp/Admin/Teacher/TeacherResult.jsp" />
+        </action>
+        
+        
+        <action path="/ListAdvancedTeachers" type="com.pkg.Action.ListAdvancedTeacherAction" name="lstForm" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Search_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/Teacher/TeacherResult.jsp" />
+        </action>
+        <action path="/ListAdvancedStudents" type="com.pkg.Action.ListAdvancedStudentAction" name="lstForm" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Search_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/Teacher/TeacherResult.jsp" />
+        </action>
+       
+        <action path="/StudentDetail" type="com.pkg.Action.StudentDetailDisplayAction" name="lstForm" scope="session"
+        validate="true" input="/jsp/Admin/Student/StudentResult.jsp">
+        <forward name="perfect" path="/jsp/Admin/Student/DisplayStudentDetails.jsp"></forward>
+        </action>
+        <action path="/TeacherDetail" type="com.pkg.Action.TeacherDetailDisplayAction" name="lstForm" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/TeacherResult.jsp">
+        <forward name="perfect" path="/jsp/Admin/Teacher/DisplayTeacherDetails.jsp"></forward>
+        </action>
+        
+        
+        <!--                     Master Data -->
+         <action path="/AddCategories" type="com.pkg.Action.SchoolMasterDataAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/Category.jsp" />
+        </action>
+         <action path="/AddClassAndSections" type="com.pkg.Action.SchoolMasterDataClassLevelAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/ClassAndSections.jsp" />
+        </action>
+        
+         <action path="/AddComplexity" type="com.pkg.Action.SchoolMasterDataComplexityAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/Complexity.jsp" />
+        </action>
+        
+          <action path="/AddEvent" type="com.pkg.Action.SchoolMasterDataEventAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/EventTypes.jsp" />
+        </action>
+        
+            <action path="/AddExam" type="com.pkg.Action.SchoolMasterDataExamAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/ExamTypes.jsp" />
+        </action>
+        
+           <action path="/AddFormat" type="com.pkg.Action.SchoolMasterDataFormatTypesAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/FormatTypes.jsp" />
+        </action>
+        
+           <action path="/AddGeneralInfo" type="com.pkg.Action.SchoolMasterDataGeneralInfoAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/GeneralInfo.jsp" />
+        </action>
+        
+              <action path="/AddGrades" type="com.pkg.Action.SchoolMasterDataGradesInfoAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/Grades.jsp" />
+        </action>
+        
+                <action path="/AddGraphs" type="com.pkg.Action.SchoolMasterDataGraphsAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/GraphTypes.jsp" />
+        </action>
+        
+              <action path="/AddGroupTypes" type="com.pkg.Action.SchoolMasterDataGroupTypesAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/GroupTypes.jsp" />
+        </action>
+        
+             <action path="/AddGuardian" type="com.pkg.Action.SchoolMasterDataGuardianTypesAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/GuardianTypes.jsp" />
+        </action>
+        
+          <action path="/AddCalendar" type="com.pkg.Action.SchoolMasterDataCalenderAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/Calender.jsp" />
+        </action>
+        
+          <action path="/AddHelpSchoolInfo" type="com.pkg.Action.SchoolMasterDataHelpSchoolAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/HelpSchoolTypes.jsp" />
+        </action>
+        
+          <action path="/AddNewsAndEvents" type="com.pkg.Action.SchoolMasterDataNewsAndEventsAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/NewsAndEvents.jsp" />
+        </action>
+        
+         <action path="/AddNonNativeStudent" type="com.pkg.Action.SchoolMasterDataNonNativeStudentAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/Non_Native_Student.jsp" />
+        </action>
+        
+         
+         <action path="/AddPeriodTypes" type="com.pkg.Action.SchoolMasterDataPeriodTypesAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/PeriodTypes.jsp" />
+        </action>
+        
+         <action path="/AddPersonGroup" type="com.pkg.Action.SchoolMasterDataPersonGroupAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/Person_Group.jsp" />
+        </action>
+        
+          <action path="/SpecialSubjects" type="com.pkg.Action.SchoolMasterDataSpecialSubjectsAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/SpecialSubjects.jsp" />
+        </action>
+        
+             <action path="/StatusTypes" type="com.pkg.Action.SchoolMasterDataStatusTypesAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/StatusTypes.jsp" />
+        </action>
+        
+              <action path="/SubTopics" type="com.pkg.Action.SchoolMasterDataSubTopicsAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/StudentSubTopic.jsp" />
+        </action>
+        
+             <action path="/TestTopics" type="com.pkg.Action.SchoolMasterDataTestTopicsAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/StudentTestType.jsp" />
+        </action>
+        
+        
+             <action path="/TaskTypes" type="com.pkg.Action.SchoolMasterDataTaskTypesAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/TaskTypes.jsp" />
+        </action>
+        
+         <action path="/Subject" type="com.pkg.Action.SchoolMasterDatSubjectAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/SubjectTypes.jsp" />
+        </action>
+        
+		  <action path="/AddTeacherToSubject" type="com.pkg.Action.SchoolMasterDatTeacherToSubjectAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/TeacherToSubject.jsp" />
+        </action>
+        
+         <action path="/AddExamSchedule" type="com.pkg.Action.SchoolMasterDataExamScheduleAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/ExamSchedule.jsp" />
+        </action>
+        
+        
+          <action path="/AddUpdateTimeTable" type="com.pkg.Action.SchoolMasterDataTimeTableAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/TimeTable.jsp" />
+        </action>
+        
+         
+          <action path="/AddUpdatecmnTimeTable" type="com.pkg.Action.SchoolMasterDataTimeTableCmnFormatAction" name="addMasterDataform" scope="session"
+        validate="true" input="/jsp/Admin/Teacher/Add_Teacher.jsp">
+          <forward name="success" path="/jsp/Admin/MasterData/TimeTableNewCmnFormat.jsp" />
+          <forward name="newtimetable" path="/jsp/Admin/MasterData/TimeTableAddModifyClassTimeTableFormat.jsp" />
+          <forward name="newtimetablewithlist" path="/jsp/Admin/MasterData/TimeTableModifyClassTimeTableFormat.jsp" />
+        </action>
+        
+        
+    </action-mappings>
+<message-resources parameter="ApplicationResources" null="false" />
+
+</struts-config>
+

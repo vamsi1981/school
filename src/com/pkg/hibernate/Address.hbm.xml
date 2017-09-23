@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Oct, 2013 5:01:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pkg.hibernate.Address" table="address" catalog="maa">
+        <id name="addCode" type="string">
+            <column name="Add_Code" length="15" />
+            <generator class="assigned" />
+        </id>
+        <property name="personId" type="string">
+            <column name="Person_Id" length="15" />
+        </property>
+        <property name="address1" type="string">
+            <column name="Address1" length="45" />
+        </property>
+        <property name="street" type="string">
+            <column name="Street" length="45" />
+        </property>
+        <property name="houseNo" type="string">
+            <column name="`House No`" length="45" />
+        </property>
+        <property name="pin" type="string">
+            <column name="Pin" length="45" />
+        </property>
+        <property name="refAddress" type="string">
+            <column name="`Ref-Address`" length="15" />
+        </property>
+        <property name="creDate" type="date">
+            <column name="cre_date" length="0" />
+        </property>
+        <property name="country" type="string">
+            <column name="Country" length="15" />
+        </property>
+        <set name="personDependentDetails" table="person_dependent_detail" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Add_Code" length="15" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.PersonDependentDetail" />
+        </set>
+    </class>
+</hibernate-mapping>

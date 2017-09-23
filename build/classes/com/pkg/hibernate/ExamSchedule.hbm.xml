@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Oct, 2013 5:01:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pkg.hibernate.ExamSchedule" table="exam_schedule" catalog="maa">
+        <id name="scheduleId" type="string">
+            <column name="Schedule_Id" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="classlevel" class="com.pkg.hibernate.Classlevel" fetch="select">
+            <column name="Class_ID" length="10" />
+        </many-to-one>
+        <many-to-one name="exam" class="com.pkg.hibernate.Exam" fetch="select">
+            <column name="Exam_Code" length="10" />
+        </many-to-one>
+        <property name="examStartDt" type="date">
+            <column name="exam_start_dt" length="0" />
+        </property>
+        <property name="examEndDt" type="date">
+            <column name="exam_end_dt" length="0" />
+        </property>
+        <set name="markses" table="marks" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Schedule_id" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.Marks" />
+        </set>
+        <one-to-one name="performanceType" class="com.pkg.hibernate.PerformanceType"></one-to-one>
+    </class>
+</hibernate-mapping>

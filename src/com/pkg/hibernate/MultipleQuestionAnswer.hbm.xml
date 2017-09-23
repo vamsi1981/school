@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Oct, 2013 5:01:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pkg.hibernate.MultipleQuestionAnswer" table="multiple_question_answer" catalog="maa">
+        <id name="questionCode" type="string">
+            <column name="Question_Code" length="45" />
+            <generator class="foreign">
+                <param name="property">questionsIq</param>
+            </generator>
+        </id>
+        <one-to-one name="questionsIq" class="com.pkg.hibernate.QuestionsIq" constrained="true"></one-to-one>
+        <many-to-one name="exam" class="com.pkg.hibernate.Exam" fetch="select">
+            <column name="EXAM_CODE" length="10" />
+        </many-to-one>
+        <property name="possibleAnswerCode" type="string">
+            <column name="Possible_Answer_Code" length="45" />
+        </property>
+        <property name="answer" type="string">
+            <column name="Answer" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,52 @@
+#wrapper
+{
+	margin:0px;
+	padding:0px;
+	top: auto;
+}
+
+#navMenu{
+	
+margin: 0;
+padding: 0;
+	
+}
+#navMenu ul{
+	
+margin:0;
+padding:0;
+height: 30px;
+display:inline;
+
+	
+}
+#navMenu li{
+	
+margin:0;
+padding:0;
+list-style:none;
+list-style-position: none;
+display:inline;
+float: left;
+text-align: justify;
+position: relative;
+background:green;
+top:69.6px;
+left:-303.0px;
+	
+}
+#navMenu ul li a
+{
+
+	text-align:center;
+	font-family: "TIMESNEWROMAN",cursive;
+	font-size:large;
+	font-stretch:normal;
+	text-decoration: none;
+	height:30px;
+	width:146.1px;
+	top:auto;	
+	display:block;
+	color: white;
+	border: 1px solid black;
+}

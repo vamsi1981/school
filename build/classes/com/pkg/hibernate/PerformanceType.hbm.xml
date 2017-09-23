@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Oct, 2013 5:01:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pkg.hibernate.PerformanceType" table="performance_type" catalog="maa">
+        <id name="scheduleId" type="string">
+            <column name="Schedule_Id" length="45" />
+            <generator class="foreign">
+                <param name="property">examSchedule</param>
+            </generator>
+        </id>
+        <one-to-one name="examSchedule" class="com.pkg.hibernate.ExamSchedule" constrained="true"></one-to-one>
+        <many-to-one name="subject" class="com.pkg.hibernate.Subject" fetch="select">
+            <column name="Subject_id" length="5" />
+        </many-to-one>
+        <property name="percentage" type="java.lang.Double">
+            <column name="Percentage" precision="10" />
+        </property>
+    </class>
+</hibernate-mapping>

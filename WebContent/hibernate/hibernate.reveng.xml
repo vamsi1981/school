@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="maa" match-name="address"/>
+  <table-filter match-catalog="maa" match-name="calender"/>
+  <table-filter match-catalog="maa" match-name="category"/>
+  <table-filter match-catalog="maa" match-name="classlevel"/>
+  <table-filter match-catalog="maa" match-name="complexity"/>
+  <table-filter match-catalog="maa" match-name="daily_work"/>
+  <table-filter match-catalog="maa" match-name="event"/>
+  <table-filter match-catalog="maa" match-name="exam"/>
+  <table-filter match-catalog="maa" match-name="exam_schedule"/>
+  <table-filter match-catalog="maa" match-name="focus_areas"/>
+  <table-filter match-catalog="maa" match-name="format"/>
+  <table-filter match-catalog="maa" match-name="general_info"/>
+  <table-filter match-catalog="maa" match-name="grades"/>
+  <table-filter match-catalog="maa" match-name="graphs"/>
+  <table-filter match-catalog="maa" match-name="group_type"/>
+  <table-filter match-catalog="maa" match-name="guardian"/>
+  <table-filter match-catalog="maa" match-name="help_sc"/>
+  <table-filter match-catalog="maa" match-name="marks"/>
+  <table-filter match-catalog="maa" match-name="marks_section_wise"/>
+  <table-filter match-catalog="maa" match-name="multiple_question_answer"/>
+  <table-filter match-catalog="maa" match-name="news_and_events"/>
+  <table-filter match-catalog="maa" match-name="non_native_student"/>
+  <table-filter match-catalog="maa" match-name="performance_type"/>
+  <table-filter match-catalog="maa" match-name="period"/>
+  <table-filter match-catalog="maa" match-name="person"/>
+  <table-filter match-catalog="maa" match-name="person_attendence"/>
+  <table-filter match-catalog="maa" match-name="person_dependent_detail"/>
+  <table-filter match-catalog="maa" match-name="person_group"/>
+  <table-filter match-catalog="maa" match-name="person_transaction"/>
+  <table-filter match-catalog="maa" match-name="promote_student"/>
+  <table-filter match-catalog="maa" match-name="question_table"/>
+  <table-filter match-catalog="maa" match-name="questions_iq"/>
+  <table-filter match-catalog="maa" match-name="special_subject"/>
+  <table-filter match-catalog="maa" match-name="status"/>
+  <table-filter match-catalog="maa" match-name="student_group"/>
+  <table-filter match-catalog="maa" match-name="student_iq_options"/>
+  <table-filter match-catalog="maa" match-name="student_iq_test"/>
+  <table-filter match-catalog="maa" match-name="sub_topics"/>
+  <table-filter match-catalog="maa" match-name="subject"/>
+  <table-filter match-catalog="maa" match-name="subject_section"/>
+  <table-filter match-catalog="maa" match-name="task"/>
+  <table-filter match-catalog="maa" match-name="teacher_to_subject"/>
+  <table-filter match-catalog="maa" match-name="test"/>
+  <table-filter match-catalog="maa" match-name="test_time"/>
+  <table-filter match-catalog="maa" match-name="time_table"/>
+  <table-filter match-catalog="maa" match-name="time_table_com"/>
+</hibernate-reverse-engineering>

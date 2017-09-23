@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Oct, 2013 5:01:48 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.pkg.hibernate.PersonGroup" table="person_group" catalog="maa">
+        <composite-id name="id" class="com.pkg.hibernate.PersonGroupId">
+            <key-property name="personId" type="string">
+                <column name="Person_Id" length="25" />
+            </key-property>
+            <key-property name="personType" type="string">
+                <column name="Person_Type" length="15" />
+            </key-property>
+            <key-property name="groupType" type="string">
+                <column name="Group_Type" length="10" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="person" class="com.pkg.hibernate.Person" update="false" insert="false" fetch="select">
+            <column name="Person_Type" length="15" not-null="true" />
+            <column name="Person_Id" length="25" not-null="true" />
+        </many-to-one>
+        <many-to-one name="groupType" class="com.pkg.hibernate.GroupType" update="false" insert="false" fetch="select">
+            <column name="Group_Type" length="10" not-null="true" />
+        </many-to-one>
+        <property name="date" type="date">
+            <column name="Date" length="0" />
+        </property>
+    </class>
+</hibernate-mapping>

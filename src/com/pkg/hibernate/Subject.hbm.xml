@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.pkg.hibernate.Subject" table="subject" catalog="maa">
+        <id name="subjectId" type="java.lang.String">
+            <column name="Subject_Id" length="5" />
+            
+        </id>
+        <property name="subjectCode" type="java.lang.String">
+            <column name="Subject_Code" length="45" />
+        </property>
+        <property name="subjectName" type="java.lang.String">
+            <column name="Subject_Name" length="45" />
+        </property>
+        <set name="focusAreases" inverse="true">
+            <key>
+                <column name="Subject_Id" length="5" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.FocusAreas" />
+        </set>
+        <set name="timeTables" inverse="true">
+            <key>
+                <column name="Subject_Id" length="5" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.TimeTable" />
+        </set>
+        <set name="markses" inverse="true">
+            <key>
+                <column name="subject_id" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.Marks" />
+        </set>
+        <set name="subjectSections" inverse="true">
+            <key>
+                <column name="Subject_Code" length="5" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.SubjectSection" />
+        </set>
+        <set name="dailyWorks" inverse="true">
+            <key>
+                <column name="Subject_Id" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.DailyWork" />
+        </set>
+        <set name="teacherToSubjects" inverse="true">
+            <key>
+                <column name="Subject_Id" length="5" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.TeacherToSubject" />
+        </set>
+        <set name="specialSubjects" inverse="true">
+            <key>
+                <column name="Subject_Id" length="5" not-null="true" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.SpecialSubject" />
+        </set>
+        <set name="performanceTypes" inverse="true">
+            <key>
+                <column name="Subject_id" length="5" />
+            </key>
+            <one-to-many class="com.pkg.hibernate.PerformanceType" />
+        </set>
+    </class>
+</hibernate-mapping>

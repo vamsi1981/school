@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.password">password</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/maa</property>
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <property name="hibernate.search.autoregister_listeners">false</property>
+  <property name="show_sql">true</property>
+  <mapping resource="com/pkg/hibernate/TimeTableCom.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Test.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Complexity.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Graphs.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Address.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/DailyWork.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Classlevel.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Period.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/StudentGroup.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/TeacherToSubject.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/NonNativeStudent.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Person.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/PersonDependentDetail.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/GeneralInfo.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Calender.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/GroupType.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/SubjectSection.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/StudentIqOptions.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/ExamSchedule.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/NewsAndEvents.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/SubTopics.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/QuestionsIq.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Category.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/PromoteStudent.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/PersonTransaction.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/StudentIqTest.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/SpecialSubject.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/MultipleQuestionAnswer.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Event.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Marks.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/TimeTable.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/QuestionTable.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/PersonGroup.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Guardian.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/MarksSectionWise.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Status.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Grades.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Exam.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/PersonAttendence.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Format.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/PerformanceType.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/TestTime.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/FocusAreas.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Task.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Subject.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/HelpSc.hbm.xml"/>
+  <mapping resource="com/pkg/hibernate/Timetableschedule.hbm.xml"/>
+ </session-factory>
+</hibernate-configuration>
